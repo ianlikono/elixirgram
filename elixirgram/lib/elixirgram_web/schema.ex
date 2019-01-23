@@ -7,5 +7,10 @@ defmodule ElixirgramWeb.Schema do
         field :photos, list_of(:photo) do
             resolve &Resolvers.Posts.photos/3
         end
+
+        field :photo, :photo do
+            arg :id, non_null(:id)
+            resolve &Resolvers.Posts.photo/3
+        end
     end
 end
